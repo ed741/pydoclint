@@ -5,7 +5,6 @@ import importlib.metadata as importlib_metadata
 from typing import TYPE_CHECKING, Any
 
 from pydoclint.visitor import Visitor
-from traitlets import default
 
 if TYPE_CHECKING:
     import ast

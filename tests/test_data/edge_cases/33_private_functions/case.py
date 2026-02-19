@@ -24,4 +24,22 @@ class TestClass:
         Returns:
             bool: Always returns False
         """
+        def inner_method() -> bool:
+            """inner method should also be skipped as it is inside a private method.
+
+            Returns:
+                int: An incorrect return type.
+            """
+            return False
+        return inner_method()
+
+    def __private_name_mangled_method(self, i: int) -> bool:
+        """Name mangled test method
+
+        Args:
+            i (bool): With incorrect argument type
+
+        Returns:
+            bool: Always returns False
+        """
         return False

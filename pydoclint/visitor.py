@@ -195,7 +195,7 @@ class Visitor(ast.NodeVisitor):
         if (
             self.skipCheckingPrivateFunctions
             and node.name.startswith("_")
-            and not node.name.startswith("__")
+            and not (node.name.startswith("__") and node.name.endswith("__"))
         ):
             # Skip private functions, but not dunder methods.
             self.parent = parent_  # restore
