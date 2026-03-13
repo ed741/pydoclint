@@ -157,7 +157,7 @@ def validateNativeModeNoqaLocation(
     type=bool,
     show_default=True,
     default=False,
-    help='If True, skip checking docstrings of private functions.'
+    help='If True, skip checking docstrings of private functions.',
 )
 @click.option(
     '-aid',

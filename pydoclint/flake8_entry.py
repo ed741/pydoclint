@@ -109,7 +109,7 @@ class Plugin:
             action='store',
             default='False',
             parse_from_config=True,
-            help='If True, skip checking docstrings of private functions.'
+            help='If True, skip checking docstrings of private functions.',
         )
         parser.add_option(
             '-aid',
@@ -331,7 +331,9 @@ class Plugin:
             options.skip_checking_short_docstrings
         )
         cls.skip_checking_raises = options.skip_checking_raises
-        cls.skip_checking_private_functions = options.skip_checking_private_functions
+        cls.skip_checking_private_functions = (
+            options.skip_checking_private_functions
+        )
         cls.allow_init_docstring = options.allow_init_docstring
         cls.require_return_section_when_returning_none = (
             options.require_return_section_when_returning_none

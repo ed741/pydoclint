@@ -22,6 +22,7 @@ from pydoclint.utils.generic import (
     generateFuncMsgPrefix,
     getDocstring,
     isLastConstructor,
+    isPrivateVariable,
 )
 from pydoclint.utils.method_type import MethodType
 from pydoclint.utils.parse_docstring import (
@@ -192,12 +193,7 @@ class Visitor(ast.NodeVisitor):
             self.parent = parent_  # restore
             return
 
-        if (
-            self.skipCheckingPrivateFunctions
-            and node.name.startswith("_")
-            and not (node.name.startswith("__") and node.name.endswith("__"))
-        ):
-            # Skip private functions, but not dunder methods.
+        if self.skipCheckingPrivateFunctions and isPrivateVariable(node.name):
             self.parent = parent_  # restore
             return
 
