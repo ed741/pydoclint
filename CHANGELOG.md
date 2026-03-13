@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.8.4] - 2026-3-13
+
+- Added
+  - A new config option `--skip-checking-private-functions` (shortform:
+    `-scpf`) so docstrings in private methods can be skipped
+- Full diff
+  - https://github.com/jsh9/pydoclint/compare/0.8.3...0.8.4
+
 ## [0.8.3] - 2025-11-26
 
 - Added
